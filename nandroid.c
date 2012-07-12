@@ -104,7 +104,7 @@ typedef int (*nandroid_backup_handler)(const char* backup_path, const char* back
 static int mkyaffs2image_wrapper(const char* backup_path, const char* backup_file_image, int callback) {
     char backup_file_image_with_extension[PATH_MAX];
     sprintf(backup_file_image_with_extension, "%s.img", backup_file_image);
-    return mkyaffs2image(backup_path, backup_file_image_with_extension, 0, callback ? yaffs_callback : NULL);
+    return mkyaffs2image(backup_path, backup_file_image_with_extension, 0, NULL, callback ? yaffs_callback : NULL);
 }
 
 static int tar_compress_wrapper(const char* backup_path, const char* backup_file_image, int callback) {
